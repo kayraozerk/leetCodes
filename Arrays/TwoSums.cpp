@@ -1,10 +1,14 @@
-//11.09.2025 Tankut Kayra Özerk, first submission
-
+//11.09.2025 Tankut Kayra Özerk
 #include <iostream>
 #include <vector>
 using namespace std;
 
 
+/*
+This solution has
+Time: O(n*n)
+Space: O(1);
+*/
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -28,5 +32,28 @@ public:
             }
         }
         return output;
+    }
+};
+
+/*
+Second Solution
+Time: O(n)
+Space: O(n)
+*/
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int,int> hash;
+        for(int i = 0 ; i < nums.size(); i++){
+            hash[nums[i]] = i;
+        }
+        for(int i = 0; i <nums.size(); i++){
+            int x = target- nums[i];
+            if(hash.find(x) != hash.end()&& hash[x] != i){
+                return {i, hash[x]};
+            }
+        }
+        return {};
     }
 };

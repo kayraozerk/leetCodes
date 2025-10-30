@@ -1,6 +1,5 @@
 /*
 13.09.2025 Tankut Kayra Özerk
-
 */
 
 #include <iostream>
